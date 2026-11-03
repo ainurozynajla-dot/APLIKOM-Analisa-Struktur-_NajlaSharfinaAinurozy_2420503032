@@ -1,0 +1,24 @@
+/* Halaman login: memakai token warna dari style.css */
+.login{min-height:100vh;display:grid;place-items:center;padding:24px 16px}
+.panel{width:100%;max-width:420px}
+.scene{display:block;width:100%;height:auto;margin-bottom:8px}
+.scene .water{fill:var(--v);opacity:.25}
+.scene .deck{fill:var(--muted)}
+.scene .pier{fill:var(--fg)}
+.scene .truck{animation:drive 9s linear infinite}
+@keyframes drive{from{transform:translateX(-60px)}to{transform:translateX(330px)}}
+@media (prefers-reduced-motion:reduce){.scene .truck{animation:none;transform:translateX(150px)}}
+.login h1{font:600 1.65rem/1.25 Georgia,"Iowan Old Style",serif;margin:0 0 4px}
+.login .sub{margin:0 0 16px;color:var(--muted)}
+form{display:grid;gap:14px}
+.field{display:flex;flex-direction:column;gap:4px;font-size:.92rem;color:var(--muted)}
+.field input[type=text],.field input[type=password]{font:inherit;font-size:1rem;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--fg);width:100%}
+.pw{position:relative}
+.pw input{padding-right:84px!important}
+.pw button{position:absolute;right:6px;top:50%;transform:translateY(-50%);padding:5px 12px;font-size:.85rem}
+.err{min-height:1.4em;margin:0;color:var(--m);font-size:.92rem}
+.actions{display:grid;gap:10px}
+.actions button{padding:11px 18px;font-size:1rem}
+.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.hint{margin-top:14px;font-size:.88rem;color:var(--muted)}
+.hint code{background:var(--bg);padding:1px 6px;border-radius:6px;color:var(--fg)}

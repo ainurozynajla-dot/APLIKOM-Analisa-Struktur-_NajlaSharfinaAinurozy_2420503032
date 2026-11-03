@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Masuk – Jembatan SFD, BMD &amp; NFD</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <main class="login">
+      <div class="panel">
+        <svg class="scene" viewBox="0 0 360 120" role="img" aria-label="Truk melintasi jembatan">
+          <rect class="water" x="0" y="96" width="360" height="24" rx="4" />
+          <rect class="pier" x="20" y="74" width="10" height="30" />
+          <rect class="pier" x="330" y="74" width="10" height="30" />
+          <rect class="deck" x="10" y="68" width="340" height="9" rx="2" />
+          <g class="truck">
+            <rect x="0" y="40" width="34" height="22" rx="2" fill="#f59e0b" />
+            <rect x="34" y="48" width="14" height="14" rx="2" fill="#d97706" />
+            <circle cx="10" cy="63" r="5" fill="#222" />
+            <circle cx="40" cy="63" r="5" fill="#222" />
+          </g>
+        </svg>
+
+        <div class="card">
+          <h1>Selamat datang kembali</h1>
+          <p class="sub">Masuk untuk melihat bagaimana jembatan menahan beban.</p>
+
+          <form id="form" novalidate>
+            <label class="field"
+              >Nama pengguna
+              <input id="user" type="text" autocomplete="username" autocapitalize="none" required autofocus />
+            </label>
+            <label class="field"
+              >Kata sandi
+              <span class="pw">
+                <input id="pass" type="password" autocomplete="current-password" required />
+                <button type="button" id="toggle" class="chip" aria-pressed="false">Tampilkan</button>
+              </span>
+            </label>
+            <label class="chk" style="flex-direction: row; align-items: center; gap: 8px; font-size: 0.92rem; color: var(--muted)"> <input type="checkbox" id="remember" /> Ingat saya di perangkat ini </label>
+            <p class="err" id="err" role="alert"></p>
+            <div class="actions">
+              <button type="submit">Masuk</button>
+              <button type="button" id="guest" class="ghost">Coba sebagai tamu</button>
+            </div>
+          </form>
+        </div>
+
+        <p class="hint">Akun contoh: <code>admin</code> / <code>najla</code> atau <code>mahasiswa</code> / <code>sipil2024</code>.</p>
+      </div>
+    </main>
+    <script src="login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+:root{--sky:linear-gradient(180deg,#bfe0fa 0%,#dcedfc 55%,#f1f8ff 100%);--bg:#dbeafe;--card:rgba(255,252,247,.92);--fg:#2b2a33;--muted:#667080;--line:#cdd9e6;--v:#2563eb;--m:#dc2626;--n:#16a34a;--acc:#b8603e;--accfg:#fff;--cloud:rgba(255,255,255,.8);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sky:linear-gradient(180deg,#0e1a2c,#172a42);--bg:#0e1a2c;--card:rgba(34,40,56,.92);--fg:#f1ebe3;--muted:#a3adbd;--line:#34445e;--v:#60a5fa;--m:#f87171;--n:#4ade80;--acc:#e8a07f;--accfg:#1c1a1f;--cloud:rgba(255,255,255,.07)}}
+:root[data-theme="dark"]{--sky:linear-gradient(180deg,#0e1a2c,#172a42);--bg:#0e1a2c;--card:rgba(34,40,56,.92);--fg:#f1ebe3;--muted:#a3adbd;--line:#34445e;--v:#60a5fa;--m:#f87171;--n:#4ade80;--acc:#e8a07f;--accfg:#1c1a1f;--cloud:rgba(255,255,255,.07)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:var(--sky) fixed;color:var(--fg);font:16px/1.6 "Gill Sans","Seravek","Candara","Trebuchet MS",system-ui,sans-serif}
+main{max-width:1000px;margin:0 auto;padding:22px 16px 44px}
+h1{font:600 1.7rem/1.25 Georgia,"Iowan Old Style",serif;margin:0 0 4px}
+p.sub{margin:0 0 16px;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:0 6px 22px rgba(60,80,120,.1)}
+canvas{width:100%;display:block}
+.ctrl{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px 20px;margin-top:14px}
+label{display:flex;flex-direction:column;font-size:.88rem;color:var(--muted);gap:2px}
+label b{color:var(--fg);font-weight:600}
+input[type=range]{width:100%;accent-color:var(--acc)}
+input[type=number]{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--fg);width:100%;margin-top:4px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}
+button{background:var(--acc);color:var(--accfg);border:0;border-radius:999px;padding:8px 18px;font:inherit;cursor:pointer}
+.chip{background:var(--card);color:var(--fg);border:1px solid var(--line);padding:6px 13px;font-size:.92rem}
+.chip.on{background:var(--acc);color:var(--accfg);border-color:var(--acc)}
+.chk{flex-direction:row;align-items:center;gap:6px}
+.story{margin-top:14px;border-left:4px solid var(--acc)}
+.story h2,summary{font:600 1.05rem Georgia,serif}
+.story p{margin:4px 0 0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:14px}
+.stat{border:1px solid var(--line);border-radius:14px;padding:8px 12px;background:var(--card)}
+.stat small{color:var(--muted);display:block}
+.stat span{font-size:1.15rem;font-weight:600}
+details{margin-top:14px}
+details p{margin:6px 0 0}
+.rw{display:flex;gap:8px;flex-wrap:wrap;align-items:end;margin-top:8px}.rw>*{flex:1 1 130px}.rw .chip{flex:0 0 auto}.rw .chip:disabled{opacity:.35;cursor:default}
+select{font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--fg)}
+#edcard h2{font:600 1.05rem Georgia,serif;margin:0}#edcard p{margin:2px 0 4px;color:var(--muted);font-size:.9rem}
+.note{font-size:.84rem;color:var(--muted);margin-top:14px}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.top h1{flex:1}
+.who{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.9rem;white-space:nowrap;padding-top:6px}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jembatan: Memahami SFD, BMD &amp; NFD</title>
+<link rel="stylesheet" href="style.css">
+<script src="auth.js"></script>
+</head>
+<body>
+<main>
+<header class="top"><h1>Bagaimana jembatan “merasakan” beban?</h1><div class="who"><span id="who"></span><button class="chip" id="logout">Keluar</button></div></header>
+<p class="sub">Halo! Bayangkan jembatan sebagai balok yang menopang kita. Pilih siapa yang lewat, atur panjang bentang dan bebannya, lalu lihat gaya-gaya di dalam jembatan berubah.</p>
+
+<div class="card"><canvas id="cv"></canvas></div>
+<div class="row" id="veh"></div>
+<div class="row">
+  <button id="play">⏸ Jeda</button>
+  <label class="chk"><input type="checkbox" id="env" checked> Tampilkan envelope (batas maks/min)</label>
+  <button class="chip" id="mixb">🚦 Preset arus campuran</button>
+</div>
+
+<div class="ctrl">
+  <label>Panjang bentang: <b id="lv"></b><input type="range" id="L" min="6" max="60" step="1" value="20"></label>
+  
+  
+  
+  <label>Posisi (depan): <b id="pv"></b><input type="range" id="pos" step="0.05"></label>
+  <label>Kecepatan: <b id="sv"></b><input type="range" id="spd" min="0.5" max="12" step="0.5" value="3"></label>
+  <label>Gaya rem (% beban): <b id="mv"></b><input type="range" id="mu" min="0" max="40" step="1" value="0"></label>
+</div>
+
+<div class="card" id="edcard" style="margin-top:14px"><h2>Atur bebanmu</h2><p>Setiap baris adalah satu beban yang lewat berurutan (baris paling atas berada paling depan). Ubah jenis, berat, dan jaraknya, atau tambah beban sebanyak yang kamu mau.</p><div id="rows"></div><div class="row"><select id="addsel" aria-label="Jenis beban"></select><button id="add">+ Tambah beban</button></div></div>
+
+<div class="card story"><h2>Cerita saat ini</h2><p id="story"></p></div>
+
+<div class="stats">
+  <div class="stat"><small>Geser maks (+)</small><span id="s1">–</span></div>
+  <div class="stat"><small>Geser min (−)</small><span id="s2">–</span></div>
+  <div class="stat"><small>Momen maks</small><span id="s3">–</span></div>
+  <div class="stat"><small>Gaya normal (tarik)</small><span id="s4">–</span></div>
+</div>
+
+<details class="card"><summary>Apa itu SFD, BMD, dan NFD?</summary>
+<p><b>SFD</b> (gaya geser): seberapa kuat jembatan “digunting” di setiap titik oleh beban dan tumpuan.</p>
+<p><b>BMD</b> (momen lentur): seberapa besar jembatan ingin melengkung. Makin besar, makin menuntut penampang yang kuat.</p>
+<p><b>NFD</b> (gaya normal): gaya yang menarik atau menekan sepanjang jembatan, misalnya saat kendaraan mengerem.</p></details>
+
+<p class="note">Beban dibagi ke tiap gandar menurut proporsi kendaraan (panah merah = beban gandar, kN). Jarak antar beban diukur dari ujung belakang beban di depan ke ujung depan beban di belakangnya (maksimal 10 beban). Gaya rem horizontal ditahan sendi A. Konvensi: geser positif di atas sumbu, momen positif digambar di sisi bawah (sisi tarik), N positif = tarik. Eksentrisitas gaya rem diabaikan.</p>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
